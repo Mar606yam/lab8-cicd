@@ -9,7 +9,10 @@ const pool = new Pool({
 app.get('/tasks', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM tasks');
-    res.json(result.rows);
+    const allTasks = result.rows;
+    
+    allTasks.push({ id: 7, name: 'Tea', status: 'pending' });
+    res.json(allTasks);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

@@ -4,3 +4,7 @@ CREATE TABLE tasks (
     status VARCHAR(50) NOT NULL
 );
 INSERT INTO tasks (title, status) VALUES ('Buy milk', 'pending'), ('Finish assignment', 'in-progress');
+
+
+
+INSERT INTO tasks (name, status) VALUES ('Tea', 'pending');
